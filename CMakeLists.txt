@@ -15,7 +15,7 @@ file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/include/*.h ${PROJECT_SOURCE_DIR}/include/*.hpp)
 
 # Add executable
-add_executable(ParticleSim ${SOURCES} ${HEADERS})
+add_executable(ParticleSim ${SOURCES} ${HEADERS}   "include/Constants.h" "include/Draw.h" "src/Draw.cpp" "include/Grid.h" "src/Grid.cpp")
 
 # Include headers
 target_include_directories(ParticleSim PRIVATE ${PROJECT_SOURCE_DIR}/include)

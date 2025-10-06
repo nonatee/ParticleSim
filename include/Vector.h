@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include <SFML/System/Vector2.hpp>
 
 struct Vector2D {
 	float x;
@@ -15,4 +16,5 @@ struct Vector2D {
 	float MagnitudeSquared() const;
 	Vector2D Normalize() const;
 	float DotProduct(const Vector2D& other) const;
+	sf::Vector2f ToVector2f() const;
 };

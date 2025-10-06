@@ -1,6 +1,7 @@
 #include <cmath>
 
 #include"Vector.h"
+#include <SFML/System/Vector2.hpp>
 
 Vector2D::Vector2D() : x(0), y(0) {};
 	Vector2D::Vector2D(float x, float y) : x(x), y(y) {};
@@ -29,3 +30,6 @@ Vector2D::Vector2D() : x(0), y(0) {};
 	float Vector2D::DotProduct(const Vector2D& other) const {
 		return x * other.x + y * other.y;
 	};
+	sf::Vector2f Vector2D::ToVector2f() const {
+		return sf::Vector2f(x, y);
+	}

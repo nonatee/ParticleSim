@@ -7,7 +7,7 @@ Particle::Particle(Vector2D position, Vector2D velocity, float mass, float radiu
 	mass(mass),
 	radius(radius) {
 };
-void Particle::UpdatePosition(float deltaTime) {
+void Particle::UpdatePosition(float deltaTime, ) {
 	position = position + velocity * deltaTime;
 }
 
