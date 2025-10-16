@@ -3,5 +3,6 @@
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 800;
 const int EDGE_COUNT = 30;
-const int RADIUS_SCALE = 10;
-const int GRID_SIZE = 10;
+const int RADIUS_SCALE = 1;
+const int GRID_SIZE = 800;
+const int PARTICLE_NUM = 1000;

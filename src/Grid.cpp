@@ -4,4 +4,4 @@
 
 ParticleGrid particleGrid(
     SCREEN_WIDTH/GRID_SIZE, std::vector<std::vector<uint16_t>>(SCREEN_HEIGHT/GRID_SIZE)
-);
+); 
