@@ -65,13 +65,21 @@ int main() {
 			particleVec[i].position = particleVec[i].position + posVec[i];
 		}
 		float energy = 0;
+		Vector2D COMPos = Vector2D(0, 0);
 		for (int i = 0; i < PARTICLE_NUM; i++) {
 			deltaVec[i] = Vector2D(0, 0);
 			posVec[i] = Vector2D(0, 0);
 			Particle& part = particleVec[i];
 			part.doneCollisionVec.reset();
+			COMPos = COMPos + part.position;
 			energy += part.velocity.MagnitudeSquared();
 		}
+		DrawHeatMap(window, particleVec);
+		COMPos = COMPos * (1.0f / PARTICLE_NUM);
+		sf::CircleShape circle = sf::CircleShape::CircleShape(10, EDGE_COUNT); 
+		circle.setPosition(COMPos.ToVector2f());
+		circle.setFillColor(sf::Color::Yellow);
+		window.draw(circle);
 		//std::cout << energy << "\n" << time << "\n";
 		for (auto& row : particleGrid)
 			for (auto& cell : row)
@@ -85,7 +93,7 @@ int main() {
 		end = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double, std::milli> duration = end - start;
 
-		std::cout << "Time taken: " << duration.count() << " ms" << std::endl;
+		std::cout << "Time taken: " << COMPos.x << " ms" << std::endl;
 	}
 	file.close();
 	return 0;
